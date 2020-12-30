@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/calendar-builder/static/css/main.9cd20399.chunk.css",
+    "main.js": "/calendar-builder/static/js/main.57813e47.chunk.js",
+    "main.js.map": "/calendar-builder/static/js/main.57813e47.chunk.js.map",
+    "runtime-main.js": "/calendar-builder/static/js/runtime-main.73f76d49.js",
+    "runtime-main.js.map": "/calendar-builder/static/js/runtime-main.73f76d49.js.map",
+    "static/js/2.dc2bcaa6.chunk.js": "/calendar-builder/static/js/2.dc2bcaa6.chunk.js",
+    "static/js/2.dc2bcaa6.chunk.js.map": "/calendar-builder/static/js/2.dc2bcaa6.chunk.js.map",
+    "static/js/3.3d7cc456.chunk.js": "/calendar-builder/static/js/3.3d7cc456.chunk.js",
+    "static/js/3.3d7cc456.chunk.js.map": "/calendar-builder/static/js/3.3d7cc456.chunk.js.map",
+    "index.html": "/calendar-builder/index.html",
+    "static/css/main.9cd20399.chunk.css.map": "/calendar-builder/static/css/main.9cd20399.chunk.css.map",
+    "static/js/2.dc2bcaa6.chunk.js.LICENSE.txt": "/calendar-builder/static/js/2.dc2bcaa6.chunk.js.LICENSE.txt",
+    "static/media/App.scss": "/calendar-builder/static/media/webb.50505726.png",
+    "static/media/brush.5029e6c9.svg": "/calendar-builder/static/media/brush.5029e6c9.svg",
+    "static/media/chat-bubble-outline.68a1b4bb.svg": "/calendar-builder/static/media/chat-bubble-outline.68a1b4bb.svg",
+    "static/media/cut.aa22de83.svg": "/calendar-builder/static/media/cut.aa22de83.svg",
+    "static/media/face.79f0859c.svg": "/calendar-builder/static/media/face.79f0859c.svg",
+    "static/media/filmstrip.a9a40f29.svg": "/calendar-builder/static/media/filmstrip.a9a40f29.svg",
+    "static/media/navigation_backward-selection-minimal.32ca67f4.wav": "/calendar-builder/static/media/navigation_backward-selection-minimal.32ca67f4.wav",
+    "static/media/navigation_forward-selection-minimal.4de178f3.wav": "/calendar-builder/static/media/navigation_forward-selection-minimal.4de178f3.wav",
+    "static/media/previews.5d88469a.svg": "/calendar-builder/static/media/previews.5d88469a.svg",
+    "static/media/print.4a097426.svg": "/calendar-builder/static/media/print.4a097426.svg",
+    "static/media/state-change_confirm-down.faa23a55.wav": "/calendar-builder/static/media/state-change_confirm-down.faa23a55.wav",
+    "static/media/state-change_confirm-up.7842dcde.wav": "/calendar-builder/static/media/state-change_confirm-up.7842dcde.wav",
+    "static/media/ui_lock.1cc3759f.wav": "/calendar-builder/static/media/ui_lock.1cc3759f.wav",
+    "static/media/ui_refresh-feed.daedf4d9.wav": "/calendar-builder/static/media/ui_refresh-feed.daedf4d9.wav",
+    "static/media/ui_unlock.7011b899.wav": "/calendar-builder/static/media/ui_unlock.7011b899.wav",
+    "static/media/wallpaper.a480b3b7.svg": "/calendar-builder/static/media/wallpaper.a480b3b7.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.73f76d49.js",
+    "static/js/2.dc2bcaa6.chunk.js",
+    "static/css/main.9cd20399.chunk.css",
+    "static/js/main.57813e47.chunk.js"
+  ]
+}

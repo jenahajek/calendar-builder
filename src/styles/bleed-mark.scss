@@ -1,0 +1,79 @@
+.bleed-marks-off [class^='bleed-mark'] {
+	display: none;
+}
+
+.bleed-mark-1,
+.bleed-mark-2 {
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		height: 1px;
+		width: 1cm;
+		background: black;
+	}
+}
+
+.bleed-mark-3,
+.bleed-mark-4 {
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		width: 1px;
+		height: 1cm;
+		background: black;
+	}
+}
+
+.bleed-mark-1 {
+	&::before,
+	&::after {
+		top: 0.3cm;
+	}
+	&::before {
+		left: -1cm;
+	}
+	&::after {
+		right: -1cm;
+	}
+}
+
+.bleed-mark-2 {
+	&::before,
+	&::after {
+		bottom: 0.3cm;
+	}
+	&::before {
+		left: -1cm;
+	}
+	&::after {
+		right: -1cm;
+	}
+}
+
+.bleed-mark-3 {
+	&::before,
+	&::after {
+		left: 0.3cm;
+	}
+	&::before {
+		top: -1cm;
+	}
+	&::after {
+		bottom: -1cm;
+	}
+}
+
+.bleed-mark-4 {
+	&::before,
+	&::after {
+		right: 0.3cm;
+	}
+	&::before {
+		top: -1cm;
+	}
+	&::after {
+		bottom: -1cm;
+	}
+}

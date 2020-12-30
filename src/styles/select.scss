@@ -1,0 +1,25 @@
+.select {
+	display: flex;
+	align-items: center;
+	select {
+		width: 100%;
+		border: 1px solid var(--c-border);
+		border-width: 0 0 1px;
+		padding: 2px 5px 1px;
+		appearance: none;
+		font-size: 12px;
+		padding-right: 30px;
+		cursor: pointer;
+		background: url('../svg/triangle-down.svg') top 50% right 5px no-repeat;
+		background-size: 16px 16px;
+		flex: 0 1 50%;
+		margin-left: auto;
+		&:focus {
+			outline: none;
+		}
+		&:focus-visible {
+			box-shadow: 0 0 0 2px var(--c-primary);
+			border-radius: 3px;
+		}
+	}
+}

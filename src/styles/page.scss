@@ -1,0 +1,48 @@
+.page__wrapper {
+	position: relative;
+	max-width: 100%; // for previews
+	margin: 1.3cm auto;
+	padding: 0;
+	background: white;
+	height: 29.62cm;
+	width: 21cm;
+}
+
+.page {
+	display: block;
+	margin: 0;
+	background: white;
+	height: 29.62cm;
+	width: 21cm;
+	color: white;
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.05); /* bleed area */
+	overflow: hidden;
+}
+
+.bleed-marks-on .page__wrapper {
+	padding: 3mm;
+	margin: 1.3cm auto;
+	width: 21.6cm;
+	height: 30.3cm;
+}
+.bleed-marks-on .page {
+	overflow: visible;
+	box-shadow: 0 0 20px 0.3cm rgba(0, 0, 0, 0.05); /* bleed area */
+}
+
+@media print {
+	.bleed-marks-off .page__wrapper {
+		margin: 0;
+		overflow: hidden;
+		height: 29.62cm; // 1 - to fit on one A4 page. This doesn't consider bleed marks
+		width: 21cm; //  1
+	}
+	.bleed-marks-off .page {
+		margin: 0;
+		box-shadow: 0;
+		overflow: hidden;
+	}
+	.bleed-marks-on .page {
+		box-shadow: 0;
+	}
+}

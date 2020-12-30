@@ -1,0 +1,25 @@
+.wall {
+	min-height: 100vh;
+	background-attachment: fixed;
+	&--0 {
+		background-color: var(--c-background);
+	}
+	&--1 {
+		background-image: url('../images/webb.png');
+	}
+	&--2 {
+		background-image: url('../images/double-bubble-dark.png');
+	}
+	&--3 {
+		background-image: url('../images/moroccan-flower-dark.png');
+	}
+	&--4 {
+		background-image: url('../images/leaves.png');
+	}
+	&--5 {
+		background-image: url('../images/leaves-pattern.png');
+	}
+	@media print {
+		background: none !important;
+	}
+}

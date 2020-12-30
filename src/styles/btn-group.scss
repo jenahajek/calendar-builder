@@ -1,0 +1,19 @@
+.btn-group {
+	display: flex;
+	margin-left: (-1 * $controls-padding);
+	margin-right: (-1 * $controls-padding);
+	align-items: stretch;
+	+ .btn-group {
+		margin-top: -1px;
+	}
+	.btn {
+		flex: 1;
+		border-left: 0;
+		&:nth-child(even) {
+			padding-left: 1.5em;
+		}
+		&:nth-child(odd) {
+			padding-right: 1.5em;
+		}
+	}
+}

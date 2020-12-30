@@ -1,0 +1,261 @@
+// ==========================================================================
+// Lokalni promenne
+// ==========================================================================
+$switch-height: 18px;
+$switch-width: 40px;
+$switch-handle-diameter: 14px;
+$switch-height-lg: 40px;
+$switch-width-lg: 80px;
+$switch-handle-diameter-lg: 30px;
+$switch-label-font-weight: 700;
+$switch-label-gap: 10px;
+$switch-handle-radius: 50px;
+$switch-button-label-gap: 20px;
+$shadow-switch-handle: 1px 1px 1px 0 rgba(#000, 0.05);
+
+$switch-color-handle-text: var(--c-primary);
+$switch-color-circle-bg: var(--c-background);
+$switch-color-desc-text: var(--c-icon);
+$switch-color-inactive-bg: var(--c-background-l2);
+$switch-color-checked-bg: var(--c-primary);
+$switch-color-handle-bg: var(--c-background);
+$switch-color-handle-bg-active: rgba(#000, 0.1);
+$switch-color-handle-bg-focus: rgba(#000, 0.1);
+
+$switch-width-sm: 24px;
+$switch-height-sm: 12px;
+$switch-handle-diameter-sm: 8px;
+// ==========================================================================
+// Styly
+// ==========================================================================
+@mixin focus-circle($offset: 0, $background: currentColor) {
+	content: '';
+	position: absolute;
+	top: $offset;
+	right: $offset;
+	bottom: $offset;
+	left: $offset;
+	z-index: -1;
+	display: block;
+	border-radius: 100%;
+	background: $background;
+	outline: 2px solid transparent; // MS Hight Contrast Mode
+	box-shadow: 0 0 0 1px var(--c-background);
+	opacity: 0;
+	transform: scale(0);
+	transition: all 400ms $timing-bounce;
+}
+
+.switch {
+	$s: '.switch';
+	display: flex;
+	align-items: flex-start;
+	align-items: center;
+	&__button {
+		display: inline-block;
+		padding: 0;
+		border: none;
+		border-radius: 0;
+		background: none;
+		color: inherit;
+		line-height: inherit;
+		text-align: inherit;
+		cursor: pointer;
+		margin-left: auto;
+		// font: inherit;
+		appearance: none;
+		&:focus,
+		&:active {
+			outline: 3px solid transparent; // MS high contrast mode
+		}
+		-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+		position: relative;
+		top: 0;
+		left: 0;
+		display: block;
+		flex: 0 0 auto;
+		width: $switch-width;
+		height: $switch-height;
+		border-radius: $switch-handle-radius;
+		background: $switch-color-inactive-bg;
+		transition: background-color 150ms;
+		cursor: pointer;
+	}
+	&__handle {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		display: block;
+		width: $switch-handle-diameter;
+		height: $switch-handle-diameter;
+		margin: ($switch-height - $switch-handle-diameter)/2;
+		border-radius: $switch-handle-radius;
+		background: $switch-color-handle-bg;
+		color: $switch-color-handle-text;
+		transform: translate3d(0, 0, 0);
+		transition: all $t;
+		box-shadow: $shadow-switch-handle;
+		pointer-events: none;
+		&::before {
+			@include focus-circle(-4px);
+		}
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			z-index: 1;
+			display: block;
+			border-radius: $switch-handle-radius;
+			background: $switch-color-handle-bg-active;
+			opacity: 0;
+			transition: opacity 100ms;
+			@media screen and (-ms-high-contrast: active) {
+				content: none;
+			}
+		}
+	}
+	&__circle {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		display: block;
+		margin: auto;
+		border-radius: 100%;
+		background: $switch-color-circle-bg;
+		transition: opacity 150ms, transform 150ms;
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			display: block;
+			border-radius: $switch-handle-radius;
+			background: $switch-color-handle-bg-focus;
+			opacity: 0;
+			transition: opacity 150ms;
+		}
+	}
+	&__text {
+		// @include type-scale--1;
+		margin: 0 0 0 $switch-label-gap;
+		transition: opacity 150ms;
+		&--off {
+			order: -1;
+			margin-right: $switch-button-label-gap;
+			margin-left: 0;
+		}
+		&--on {
+			opacity: 0.33;
+		}
+	}
+	&__label {
+		margin: 0;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		font-weight: $switch-label-font-weight;
+	}
+	&__desc {
+		margin: 0;
+		color: $switch-color-desc-text;
+		font-size: 14px;
+	}
+
+	// Modifications
+	// ==========================================================================
+	&--sm {
+		padding-top: 6px;
+		padding-bottom: 6px;
+		#{$s}__button {
+			width: $switch-width-sm;
+			height: $switch-height-sm;
+		}
+		#{$s}__handle {
+			width: $switch-handle-diameter-sm;
+			height: $switch-handle-diameter-sm;
+			margin: ($switch-height-sm - $switch-handle-diameter-sm) / 2;
+			&::before {
+				top: -12px;
+				right: -12px;
+				bottom: -12px;
+				left: -12px;
+			}
+		}
+		#{$s}__text {
+			// @include type-scale--2;
+		}
+		#{$s}__button[aria-checked='true'] #{$s}__handle {
+			$x: $switch-width-sm - $switch-height-sm;
+			left: $x;
+			@supports (transform: translate3d(10px, 0, 0)) {
+				left: 0;
+				transform: translate3d($x, 0, 0);
+			}
+		}
+	}
+
+	// ==========================================================================
+	// States
+	// ==========================================================================
+
+	// Checked
+	// --------------------------------------------------------------------------
+	&__button[aria-checked='true'] &__handle {
+		$x: $switch-width - $switch-height;
+		left: $x;
+		@supports (transform: translate3d(10px, 0, 0)) {
+			left: 0;
+			transform: translate3d($x, 0, 0);
+		}
+	}
+	&__button[aria-checked='true'] {
+		background: $switch-color-checked-bg;
+	}
+	&__button[aria-checked='true'] ~ &__text--off {
+		opacity: 0.33;
+	}
+	&__button[aria-checked='true'] ~ &__text--on {
+		opacity: 1;
+	}
+
+	// Hover
+	// --------------------------------------------------------------------------
+	&:hover,
+	&__label:hover,
+	.no-touchevents &:hover,
+	.no-touchevents &__label:hover {
+		cursor: pointer;
+	}
+
+	// Focus
+	// --------------------------------------------------------------------------
+	&__button:not(:disabled):focus-visible {
+		z-index: 10;
+		outline: 3px solid transparent; // MS high contrast mode
+	}
+	&__button:not(:disabled):focus-visible &__circle::after {
+		opacity: 1;
+	}
+	&__button:not(:disabled):focus-visible &__handle::before {
+		opacity: 1;
+		transform: scale(1);
+	}
+
+	// Active
+	// --------------------------------------------------------------------------
+	&__button:not(:disabled):active &__handle::before {
+		opacity: 0.4;
+		transform: scale(1.1);
+	}
+	&__button:not(:disabled):active &__handle::after {
+		opacity: 1;
+	}
+}

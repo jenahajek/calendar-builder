@@ -1,0 +1,94 @@
+.shortcut {
+	position: relative;
+	&::before {
+		opacity: 0;
+		transition: opacity $t;
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 24px;
+		height: 24px;
+		background: var(--c-background) url('../svg/keyboard-key.svg') top 50% left no-repeat;
+	}
+	&::after {
+		position: absolute;
+		transition: opacity $t;
+		left: 0;
+		opacity: 0;
+		top: 0;
+		width: 24px;
+		height: 24px;
+		color: var(--c-icon);
+		font-weight: bold;
+		font-size: 0.8em;
+		text-align: center;
+		line-height: 2;
+	}
+	&.btn::before {
+		background-color: #f5f5f5;
+	}
+	&.btn::before,
+	&.btn::after {
+		left: 48px;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	&.btn--right::before,
+	&.btn--right::after {
+		left: auto;
+		right: 48px;
+	}
+	&--b {
+		&::after {
+			content: 'b';
+		}
+	}
+	&--f {
+		&::after {
+			content: 'f';
+		}
+	}
+	&--p {
+		&::after {
+			content: 'p';
+		}
+	}
+	&--c {
+		&::after {
+			content: 'c';
+		}
+	}
+	&--space {
+		&::after {
+			content: '\00a0\00a0';
+		}
+	}
+	&--left {
+		&::after {
+			content: ' ';
+			background: url('../svg/arrow-left.svg') top 60% center no-repeat;
+			background-size: 60%;
+		}
+	}
+	&--right {
+		&::after {
+			background: url('../svg/arrow-right.svg') top 60% center no-repeat;
+			background-size: 60%;
+			content: '';
+		}
+	}
+
+	&:hover {
+		&::before,
+		&::after {
+			opacity: 1;
+		}
+	}
+	&--left:hover,
+	&--right:hover {
+		&::after {
+			opacity: 0.5;
+		}
+	}
+}

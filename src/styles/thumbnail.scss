@@ -1,0 +1,35 @@
+.thumbnail {
+	background-color: #666;
+	display: flex;
+	align-items: center;
+	border-radius: 4px;
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+	&__inner {
+	}
+	&__hover {
+		position: absolute;
+		background-color: var(--c-primary-07);
+		display: block;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 130px;
+		line-height: 130px;
+		text-align: center;
+		font-size: 30px;
+		color: var(--c-text-inverse);
+		font-weight: bold;
+		opacity: 0;
+		transition: opacity $t;
+	}
+	&:hover &__hover,
+	.filmstrip__thumbnail:focus-visible &__hover,
+	&__hover.is-active {
+		opacity: 1;
+	}
+	img {
+		min-height: 100%;
+	}
+}

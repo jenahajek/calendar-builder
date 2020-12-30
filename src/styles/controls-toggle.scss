@@ -1,0 +1,28 @@
+.controls-toggle {
+	position: fixed;
+	top: 60px;
+	right: calc(#{$sidebar-width} - 1px);
+	z-index: 2;
+	width: 60px;
+	transition: transform $t ease-in-out;
+	height: 60px;
+	background-color: var(--c-background);
+	border: solid var(--c-border);
+	border-width: 1px 0 1px 1px;
+	@media print {
+		display: none;
+	}
+	.controls-off & {
+		transform: translateX($sidebar-width);
+	}
+	&:focus {
+		outline: 3px solid transparent;
+	}
+	&:focus-visible {
+		background-color: var(--c-primary);
+		color: var(--c-text-inverse);
+	}
+	&__icon {
+		margin: auto;
+	}
+}

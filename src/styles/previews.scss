@@ -1,0 +1,32 @@
+.previews {
+	z-index: 100;
+	overflow: hidden;
+	padding: 3em;
+	justify-content: center;
+	margin: auto;
+	display: grid;
+	grid-template-columns: repeat(4, 318px);
+	grid-template-rows: repeat(3, 450px);
+	grid-gap: 30px;
+	.previews-off & {
+		display: none;
+	}
+}
+
+.previews-on .app__content > .page__wrapper {
+	display: none;
+}
+
+.preview {
+	.page__wrapper {
+		transform: scale(0.4) translate(-75%, -75%);
+		transform-origin: center center;
+		transition: all 0.3s;
+		margin: 0;
+		&:hover {
+			transform: scale(0.42) translate(-75%, -71%);
+			z-index: 1;
+			position: relative;
+		}
+	}
+}

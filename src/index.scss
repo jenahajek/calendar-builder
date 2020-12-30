@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;700&family=Amatic+SC&family=Nerko+One&family=Pacifico&family=Raleway:wght@400;700&family=Zilla+Slab:wght@400;700&display=swap');
+@tailwind base;
+@tailwind components;
+
+body {
+	margin: 0;
+	font-family: 'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+		'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+:focus {
+	outline: 3px solid transparent;
+}
+
+@tailwind utilities;

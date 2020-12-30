@@ -1,0 +1,80 @@
+$sidebar-width: 500px;
+$t: 0.3s;
+$timing-bounce: cubic-bezier(0.22, 0.68, 0, 1.71);
+$controls-padding: 3em;
+$filmstrip-height: 149px;
+
+:root {
+	--c-primary: hsl(208, 88%, 40%);
+	--c-primary-07: hsla(208, 88%, 40%, 0.7);
+	--c-border: hsl(240, 2%, 81%);
+	--c-background: hsl(0, 0%, 100%);
+	--c-background-l1: hsl(0, 0%, 98%);
+	--c-background-l2: hsl(0, 0%, 79%);
+	--c-icon: hsl(0, 0%, 50%);
+	--c-text: #222;
+	--c-text-subtle: #666;
+	--c-text-inverse: hsl(0, 0%, 100%);
+}
+
+@import 'attribution.scss';
+@import 'bleed-mark.scss';
+@import 'btn.scss';
+@import 'btn-group.scss';
+@import 'controls-toggle.scss';
+@import 'controls.scss';
+@import 'cover-image.scss';
+@import 'date.scss';
+@import 'dates.scss';
+@import 'filmstrip.scss';
+@import 'icon.scss';
+@import 'label.scss';
+@import 'page.scss';
+@import 'previews.scss';
+@import 'select.scss';
+@import 'shortcut.scss';
+@import 'switch.scss';
+@import 'themes.scss';
+@import 'thumbnail.scss';
+@import 'weekdays.scss';
+@import 'wall.scss';
+
+* {
+	color: var(--c-text);
+}
+
+.app {
+	display: flex;
+	align-items: center;
+
+	&__content {
+		flex: 1;
+		padding-right: $sidebar-width;
+		transition: padding-right $t ease-in-out;
+		@media print {
+			padding-right: 0;
+			padding-bottom: 0;
+		}
+		&:focus {
+			outline: 3px solid transparent;
+		}
+		.controls-off & {
+			padding-right: 0;
+		}
+
+		.filmstrip-on & {
+			padding-bottom: $filmstrip-height;
+		}
+	}
+}
+
+.u-vhide {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+}

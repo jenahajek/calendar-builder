@@ -1,0 +1,484 @@
+// ------------------------------
+// Theme 1
+// ------------------------------
+.theme-1 {
+	--c-main-theme-color: rgb(17, 87, 43);
+	--c-theme-color: var(--c-main-theme-color);
+	--c-cover-title: #fff;
+	--c-cover-year: #fff;
+	--c-cover-caption-text: #fff;
+	--c-month-number: var(--c-main-theme-color);
+	--c-month-name: var(--c-main-theme-color);
+	--c-weekdays: var(--c-main-theme-color);
+	--c-days: gray;
+	--c-bday: var(--c-main-theme-color);
+	--c-nameday: var(--c-main-theme-color);
+	.cover {
+		height: 100%;
+		.cover-image {
+			height: calc(100% + 6mm);
+		}
+		&__title {
+			position: absolute;
+			top: 1em;
+			left: 50%;
+			transform: translateX(-50%);
+			text-align: center;
+			z-index: 1;
+			font-size: 60px;
+			color: var(--c-cover-title);
+			// text-shadow: 1px 0px 0 var(--c-primary), 2px 1px 0 var(--c-primary), 3px 2px 0 var(--c-primary);
+			text-shadow: 0 0 20px #000;
+			font-weight: bold;
+			line-height: 1;
+		}
+		&__year {
+			color: var(--c-cover-year);
+
+			// text-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+			text-shadow: 0 0 3px var(--c-primary);
+			// display: none;
+		}
+	}
+	.calendar-sheet {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		&::before {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			height: 10px;
+			display: block;
+			background-color: var(--c-theme-color);
+		}
+	}
+	&.bleed-marks-on .calendar-sheet::before {
+		height: calc(10px + 3mm);
+		bottom: -3mm;
+		left: -3mm;
+		right: -3mm;
+	}
+	.cover-image {
+		figure {
+			position: relative;
+		}
+		&__caption {
+			padding: 10px 20px;
+			color: var(--c-cover-caption-text);
+			background-color: var(--c-theme-color);
+			position: absolute;
+			bottom: 10px;
+			text-align: right;
+			font-size: 12px;
+			font-weight: 600;
+			left: 270px;
+			right: 10px;
+		}
+	}
+
+	.calendar-content {
+		padding: 1.5em 1.5em 2em;
+		min-height: 39%;
+		display: grid;
+		grid-template-columns: min-content auto;
+		grid-template-rows: auto 1fr;
+		grid-template-areas:
+			'month weekdays'
+			'month dates';
+		.month {
+			grid-area: month;
+			text-align: right;
+		}
+		.month__number {
+			font-size: 5em;
+			line-height: 0.8;
+			text-align: center;
+			font-weight: bold;
+			color: var(--c-month-number);
+			display: inline-block;
+			width: 100px;
+		}
+		.month__name {
+			display: none;
+			color: var(--c-month-name);
+		}
+		.weekdays {
+			grid-area: weekdays;
+		}
+		.weekdays__day {
+			text-transform: uppercase;
+			font-weight: bold;
+			color: var(--c-weekdays);
+		}
+		.dates {
+			grid-area: dates;
+			display: grid;
+			grid-template-columns: repeat(7, 1fr);
+			justify-items: center;
+		}
+		.date {
+			border: 0;
+			width: 5ch;
+			position: relative;
+			font-size: 24px;
+			background-color: transparent;
+			font-family: 'Maven Pro', sans-serif;
+			font-family: 'Raleway', sans-serif;
+			height: 5.5ch;
+		}
+		.day {
+			font-size: 23px;
+			color: var(--c-days);
+		}
+		.day--bday {
+			color: var(--c-bday);
+			font-weight: bold;
+		}
+		.day--nameday {
+			color: var(--c-nameday);
+		}
+		.anniversary {
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		.bday {
+			white-space: nowrap;
+			font-size: 13px;
+			span::before {
+				content: '(';
+			}
+			span::after {
+				content: ')';
+			}
+		}
+		.nameday {
+			font-size: 13px;
+			white-space: nowrap;
+		}
+	}
+}
+
+// ------------------------------
+// Theme 2
+// ------------------------------
+.theme-2 {
+	--c-cover-title: #fff;
+	--c-cover-year: #fff;
+	--c-month-number: #fff;
+	--c-month-number: #fff;
+	--c-cover-caption-text: #fff;
+	--c-weekdays: #0070ac;
+	--c-days: gray;
+	--c-bday: #0070ac;
+	--c-nameday: #0070ac;
+
+	.cover {
+		height: 100%;
+		.cover-image {
+			height: calc(100% + 6mm);
+		}
+		&__title {
+			position: absolute;
+			// bottom: 0.5em;
+			top: 0.5em;
+			// left: 50%;
+			left: 1em;
+			right: 1em;
+			// transform: rotate(-90deg);
+			// text-transform: uppercase;
+			transform-origin: 0 0;
+			// text-align: center;
+			z-index: 1;
+			font-size: 100px;
+			color: var(--c-cover-title);
+			text-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+			font-weight: bold;
+			line-height: 1;
+		}
+		&__year {
+			color: var(--c-cover-year);
+			text-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+			// display: none;
+		}
+	}
+
+	.calendar-sheet {
+		height: 100%;
+		display: flex;
+		position: relative;
+	}
+
+	.cover-image {
+		height: calc(100% + 6mm);
+	}
+	.cover-image {
+		figure {
+			position: relative;
+		}
+		&__caption {
+			padding: 10px 20px;
+			color: var(--c-cover-caption-text);
+			background-color: var(--c-theme-color);
+			position: absolute;
+			text-align: left;
+			font-size: 12px;
+			font-weight: 600;
+			left: 20px;
+			bottom: 20px;
+			right: 20px;
+			text-shadow: 0px 0px 5px black;
+		}
+	}
+	.calendar-content {
+		padding: 1.5em 1.5em 2em;
+		height: 100%;
+		width: 33%;
+	}
+	.month {
+		text-align: right;
+	}
+	.month__number {
+		position: absolute;
+		left: 0.3em;
+		top: 0.3em;
+		z-index: 1;
+		font-size: 120px;
+		text-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+		line-height: 0.8;
+		text-align: center;
+		font-weight: bold;
+		color: var(--c-month-number);
+	}
+	.month__name {
+		display: none;
+	}
+	.weekdays {
+		display: none;
+	}
+	// .weekdays__day {
+	// 	text-transform: uppercase;
+	// 	font-weight: bold;
+	// 	color: var(--c-weekdays);
+	// }
+	.dates {
+		justify-items: center;
+		text-align: right;
+	}
+	.date {
+		width: 100%;
+		text-align: left;
+		border-bottom: 1px solid #ddd;
+		display: flex;
+		align-items: baseline;
+		padding: 3px 0 0px;
+		position: relative;
+		font-size: 24px;
+		background-color: transparent;
+		font-family: 'Solway', serif;
+		font-family: 'Zilla Slab', serif;
+		font-family: 'Oleo Script Swash Caps', cursive;
+		font-family: 'Emblema One', cursive;
+		font-family: 'Pacifico', cursive;
+		font-family: 'Maven Pro', sans-serif;
+	}
+	.day {
+		font-size: 20px;
+		color: var(--c-days);
+	}
+	.day--bday {
+		color: var(--c-bday);
+		font-weight: bold;
+	}
+	.day--nameday {
+		color: var(--c-nameday);
+	}
+	.anniversary {
+		margin-left: 8px;
+	}
+	.bday {
+		white-space: nowrap;
+		font-size: 13px;
+		span::before {
+			content: '(';
+		}
+		span::after {
+			content: ')';
+		}
+	}
+	.nameday {
+		font-size: 13px;
+		white-space: nowrap;
+	}
+}
+
+// ------------------------------
+// Flamingo
+// ------------------------------
+.theme-flamingo {
+	--c-theme-color: hsl(18, 95%, 44%);
+	--c-cover-title: #9b2b29;
+	--c-cover-year: #ba2a28;
+	--c-cover-caption-text: #fff;
+	--c-month-number: hsl(18, 95%, 44%);
+	--c-month-name: hsl(18, 95%, 44%);
+	--c-weekdays: hsl(18, 95%, 44%);
+	--c-days: gray;
+	--c-bday: hsl(18, 95%, 44%);
+	--c-nameday: hsl(18, 95%, 44%);
+	.cover {
+		height: 100%;
+		.cover-image {
+			height: calc(100% + 6mm);
+		}
+		&__title {
+			position: absolute;
+			top: 1em;
+			font-family: 'Amatic SC', sans-serif;
+			left: 50%;
+			transform: translateX(-50%);
+			text-align: center;
+			z-index: 1;
+			font-size: 60px;
+			color: var(--c-cover-title);
+			// text-shadow: 1px 0px 0 var(--c-primary), 2px 1px 0 var(--c-primary), 3px 2px 0 var(--c-primary);
+
+			text-shadow: 0 0 3px #000;
+			font-weight: bold;
+			line-height: 1;
+		}
+		&__year {
+			color: var(--c-cover-year);
+
+			// text-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+			text-shadow: 0 0 3px #000;
+			// display: none;
+		}
+	}
+	.calendar-sheet {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		&::before {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			height: 10px;
+			display: block;
+			background-color: var(--c-theme-color);
+		}
+	}
+	&.bleed-marks-on .calendar-sheet::before {
+		height: calc(10px + 3mm);
+		bottom: -3mm;
+		left: -3mm;
+		right: -3mm;
+	}
+	.cover-image {
+		figure {
+			position: relative;
+		}
+		&__caption {
+			padding: 10px 20px;
+			color: var(--c-cover-caption-text);
+			background-color: var(--c-theme-color);
+			position: absolute;
+			bottom: 10px;
+			text-align: right;
+			font-size: 12px;
+			font-weight: 600;
+			left: 270px;
+			right: 10px;
+		}
+	}
+
+	.calendar-content {
+		padding: 1.5em 1.5em 2em;
+		min-height: 39%;
+		display: grid;
+		grid-template-columns: min-content auto;
+		grid-template-rows: auto 1fr;
+		grid-template-areas:
+			'month weekdays'
+			'month dates';
+		font-family: 'Amatic SC', sans-serif;
+		.month {
+			grid-area: month;
+			text-align: right;
+		}
+		.month__number {
+			font-size: 5em;
+			line-height: 0.8;
+			text-align: center;
+			font-weight: bold;
+			color: var(--c-month-number);
+			display: inline-block;
+			width: 100px;
+		}
+		.month__name {
+			display: none;
+			color: var(--c-month-name);
+		}
+		.weekdays {
+			grid-area: weekdays;
+		}
+		.weekdays__day {
+			text-transform: uppercase;
+			font-weight: bold;
+			color: var(--c-weekdays);
+		}
+		.dates {
+			grid-area: dates;
+			display: grid;
+			grid-template-columns: repeat(7, 1fr);
+			justify-items: center;
+		}
+		.date {
+			border: 0;
+			width: 5ch;
+			position: relative;
+			font-size: 24px;
+			background-color: transparent;
+			// font-family: 'Maven Pro', sans-serif;
+			font-family: 'Raleway', sans-serif;
+			height: 5.5ch;
+		}
+		.day {
+			font-size: 23px;
+			color: var(--c-days);
+		}
+		.day--bday {
+			color: var(--c-bday);
+			font-weight: bold;
+		}
+		.day--nameday {
+			color: var(--c-nameday);
+		}
+		.anniversary {
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		.bday {
+			white-space: nowrap;
+			font-size: 13px;
+			span::before {
+				content: '(';
+			}
+			span::after {
+				content: ')';
+			}
+		}
+		.nameday {
+			font-size: 13px;
+			white-space: nowrap;
+		}
+	}
+}
